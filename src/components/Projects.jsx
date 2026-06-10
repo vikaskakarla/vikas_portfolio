@@ -35,24 +35,24 @@ const Card = ({ project, i, progress, range, targetScale }) => {
   const scale = useTransform(progress, range, [1, targetScale]);
   
   return (
-    <div ref={containerRef} className="h-screen flex items-start justify-center sticky top-0 pt-[20vh]">
+    <div ref={containerRef} className="min-h-screen flex items-start justify-center sticky top-0 pt-[15vh] sm:pt-[20vh]">
       <motion.div 
         style={{ 
           scale, 
           top: `calc(${i * 30}px)` 
         }}
-        className={`relative w-[90vw] max-w-5xl h-[500px] md:h-[600px] ${project.color} rounded-[40px] p-8 md:p-14 flex flex-col justify-between origin-top shadow-[0_-20px_50px_rgba(0,0,0,0.6)] border border-white/10`}
+        className={`relative w-[90vw] max-w-5xl h-auto min-h-[450px] md:h-[600px] ${project.color} rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 md:p-14 flex flex-col justify-between origin-top shadow-[0_-20px_50px_rgba(0,0,0,0.6)] border border-white/10`}
       >
-        <div className="flex flex-col gap-6 max-w-2xl">
-          <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">{project.title}</h3>
-          <p className="text-lg md:text-xl text-white/60 leading-relaxed font-medium">
+        <div className="flex flex-col gap-4 sm:gap-6 max-w-2xl">
+          <h3 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white leading-tight">{project.title}</h3>
+          <p className="text-base sm:text-lg md:text-xl text-white/60 leading-relaxed font-medium">
             {project.description}
           </p>
         </div>
         
-        <div className="flex flex-wrap gap-3 mt-8">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mt-6 sm:mt-8">
           {project.tech.map((tech, idx) => (
-            <span key={idx} className="bg-brand-neon/10 text-brand-neon border border-brand-neon/20 px-4 py-2 rounded-full text-sm font-bold tracking-wide uppercase">
+            <span key={idx} className="bg-brand-neon/10 text-brand-neon border border-brand-neon/20 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase">
               {tech}
             </span>
           ))}

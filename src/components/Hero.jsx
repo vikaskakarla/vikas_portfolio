@@ -79,10 +79,10 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] tracking-tighter text-center uppercase flex flex-wrap justify-center gap-x-6 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[95vw] mb-6"
+          className="text-[13vw] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] tracking-tighter text-center uppercase flex flex-wrap justify-center gap-x-4 sm:gap-x-6 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[95vw] mb-6"
         >
           {nameWords.map((word, i) => (
-            <span key={i} className="overflow-hidden inline-block pb-4 px-2 md:px-4 -mx-2 md:-mx-4">
+            <span key={i} className="overflow-hidden inline-block pb-4 px-1 sm:px-2 md:px-4 -mx-1 sm:-mx-2 md:-mx-4">
               <motion.span 
                 variants={itemVariants}
                 className="inline-block hover:text-brand-neon transition-colors duration-300"

@@ -11,15 +11,15 @@ const About = () => {
   const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section id="about" ref={containerRef} className="relative w-full py-32 md:py-48 bg-brand-black text-white px-6">
+    <section id="about" ref={containerRef} className="relative w-full py-20 sm:py-32 md:py-48 bg-brand-black text-white px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center">
         
         {/* Left massive text */}
         <motion.div 
           style={{ y: y1 }}
-          className="flex-1"
+          className="flex-1 w-full"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-tight">
+          <h2 className="text-[12vw] sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-[1.1] md:leading-tight">
             Engineering <br />
             <span className="text-outline-neon">Intelligence</span>
           </h2>
