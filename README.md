@@ -4,7 +4,7 @@
 
 Welcome to the repository of my personal portfolio website! This project is a modern, high-performance, and visually striking web application built to showcase my projects, skills, and achievements as a Master of Computer Science.
 
-![Portfolio Preview](./public/assets/hero-placeholder.png) *(Preview placeholder)*
+
 
 ## 🚀 Tech Stack
 
