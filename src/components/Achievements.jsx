@@ -15,9 +15,7 @@ const Counter = ({ from, to, duration = 2, inView }) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
       
-      // easeOutExpo
       const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      
       setCount(Math.floor(easeProgress * (to - from) + from));
 
       if (progress < 1) {
@@ -38,9 +36,9 @@ const Achievements = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { num: 2, label: "Large-Scale Fests", desc: "Successfully executed annual college fests" },
-    { num: 1, label: "Cultural Festival", desc: "Managed major cultural event for CPA Club" },
-    { num: 2025, label: "Nasa Space Apps", desc: "Participated in the Nasa Space Apps Challenge" }
+    { num: 2, label: "Large-Scale Fests", desc: "Successfully executed annual college fests", animate: false },
+    { num: 1, label: "Cultural Festival", desc: "Managed major cultural event for CPA Club", animate: false },
+    { num: 2025, label: "Nasa Space Apps", desc: "Participated in the Nasa Space Apps Challenge", animate: true }
   ];
 
   return (
@@ -65,7 +63,11 @@ const Achievements = () => {
               className="flex flex-col items-center text-center p-8 glass-card hover:border-brand-neon/50 transition-colors duration-500"
             >
               <div className="text-6xl md:text-8xl font-black text-transparent text-outline-neon mb-4">
-                <Counter from={0} to={stat.num} inView={isInView} duration={2.5} />
+                {stat.animate ? (
+                  <Counter from={0} to={stat.num} inView={isInView} duration={2.5} />
+                ) : (
+                  stat.num
+                )}
               </div>
               <h4 className="text-xl font-bold mb-2 uppercase tracking-wide">{stat.label}</h4>
               <p className="text-white/60 text-sm">{stat.desc}</p>
